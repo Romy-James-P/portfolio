@@ -1,0 +1,60 @@
+<html>
+
+<head>
+    <link href="style.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+    <div class="contain">
+        <img class="pulse-img" src="img1.jpg" />
+        <span class="pulse-animation" style="animation-delay: -3s"></span>
+        <span class="pulse-animation" style="animation-delay: -2s"></span>
+        <span class="pulse-animation" style="animation-delay: -1s"></span>
+        <span class="pulse-animation" style="animation-delay: 0s"></span>
+    </div>
+</body>
+<style>
+.contain{
+    position: relative;
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    background: #ff8717;
+}
+.pulse-img{
+    position:absolute;
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    background: #ff8717;
+
+}
+.pulse-animation {
+  position:absolute;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: #ff8717;
+  cursor: pointer;  
+  animation: pulse 2s infinite;
+  float:left;
+}
+.pulse-animation:hover {
+  animation: none;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(.5, .5);
+    box-shadow: 0 0 0 0 rgba(204,169,44, 0.4);
+  }
+  70% {
+      box-shadow: 0 0 0 30px rgba(204,169,44, 0);
+  }
+  100% {
+    transform: scale(1.5, 1.5);
+      box-shadow: 0 0 0 0 rgba(204,169,44, 0);
+  }
+}
+</style>
+</html>

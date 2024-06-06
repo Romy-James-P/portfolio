@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Flipping Bootstrap Card on Hover</title>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<style>
+.card {
+    perspective: 1000px;
+}
+
+.card-inner {
+    transition: transform 0.5s;
+    transform-style: preserve-3d;
+}
+
+.card:hover .card-inner {
+    transform: rotateY(180deg);
+}
+
+.front,
+.back {
+    backface-visibility: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.front {
+    z-index: 2;
+}
+
+.back {
+    transform: rotateY(180deg);
+}
+</style>
+</head>
+<body>
+
+<div class="container mt-5">
+    <div class="card">
+        <div class="card-inner">
+            <div class="front card-body bg-primary">
+                <h5 class="card-title text-white">Front Side</h5>
+                <p class="card-text text-white">This is the front side of the card.</p>
+            </div>
+            <div class="back card-body bg-secondary">
+                <h5 class="card-title text-white">Back Side</h5>
+                <p class="card-text text-white">This is the back side of the card.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
